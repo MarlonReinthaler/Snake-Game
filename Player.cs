@@ -7,7 +7,7 @@ namespace SnakeGame
     {
         public decimal Speed = 180m;
         public int ScoreOne = 0;
-        public int ScoreToWin = 20;
+        public static int ScoreToWin = 100;
         public bool gameOver;
         public bool gameWin;
 

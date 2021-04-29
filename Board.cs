@@ -28,7 +28,7 @@ namespace SnakeGame
             }
 
             Console.SetCursorPosition(0, (Height + 6));
-            Console.WriteLine("100 Points to win!\nPlayer 1 (pink snake): W A S D\nPlayer 2 (green snake): Arrow Keys\n\n");
+            Console.WriteLine($"{Player.ScoreToWin} Points to win!\nPlayer 1 (magenta snake): W A S D\nPlayer 2 (blue snake): Arrow Keys\n\n");
         }
 
         private void getCursor(int x, int y, char c = '#')

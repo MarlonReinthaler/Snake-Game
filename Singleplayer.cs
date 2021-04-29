@@ -24,7 +24,7 @@ namespace SnakeGame
                 board = new Board();
                 cherry = new Cherry();
                 banana = new Banana();
-                snakeOne = new Snake(8);
+                snakeOne = new Snake(ConsoleColor.Blue, 8);
 
                 Speed = 120m;
                 ScoreOne = 0;

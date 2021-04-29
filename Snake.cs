@@ -10,9 +10,12 @@ namespace SnakeGame
         public List<Position> SnakeBody { get; set; }
         public int xSnake { get; set; }
         public int ySnake { get; set; }
+        private ConsoleColor color;
 
-        public Snake(int posHead)
+        public Snake(ConsoleColor color, int posHead)
         {
+            this.color = color;
+
             xSnake = Board.Width / 2 - 8 + posHead;
             ySnake = Board.Height / 2 + 5;
 
@@ -34,8 +37,10 @@ namespace SnakeGame
                 Console.SetCursorPosition(SnakeBody[0].x, SnakeBody[0].y);
                 Console.Write(' ');
 
+                Console.ForegroundColor = color;
                 Console.SetCursorPosition(pos.x, pos.y);
                 Console.Write('S');
+                Console.ForegroundColor = ConsoleColor.Black;
             }
         }
 
@@ -79,7 +84,7 @@ namespace SnakeGame
 
             if (head.x == food.x && head.y == food.y)
             {
-                speedSnake *= 1.10m;
+                speedSnake *= 0.95m;
                 scoreSnake += scoreFood;
                 SnakeBody.Add(new Position(xSnake, ySnake));
                 f.setFood();
