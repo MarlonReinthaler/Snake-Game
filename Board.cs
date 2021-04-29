@@ -26,9 +26,6 @@ namespace SnakeGame
                 getCursor(0, i);
                 getCursor(Width, i);
             }
-
-            Console.SetCursorPosition(0, (Height + 6));
-            Console.WriteLine($"{Player.ScoreToWin} Points to win!\nPlayer 1 (magenta snake): W A S D\nPlayer 2 (blue snake): Arrow Keys\n\n");
         }
 
         private void getCursor(int x, int y, char c = '#')

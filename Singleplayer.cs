@@ -35,6 +35,7 @@ namespace SnakeGame
                 Console.Clear();
 
                 board.drawBoard(); // Board
+                setDesc(1);
                 cherry.getCherrry(); // Cherry
                 banana.getBanana(); // Banana
 

@@ -12,22 +12,22 @@ namespace SnakeGame
         {
             if (ScoreOne >= ScoreToWin)
             {
-                setWin("SnakeOne has won");
+                setWin("Player 1 has won");
                 gameWin = true;
             }
             else if (ScoreTwo >= ScoreToWin)
             {
-                setWin("SnakeTwo has won");
+                setWin("Player 2 has won");
                 gameWin = true;
             }
             else if (gameOver == true && ScoreOne > ScoreTwo)
             {
-                setWin("SnakeOne has won");
+                setWin("Player 1 has won");
                 gameWin = true;
             }
             else if (gameOver == true && ScoreOne < ScoreTwo)
             {
-                setWin("SnakeTwo has won");
+                setWin("Player 2 has won");
                 gameWin = true;
             }
             else if (gameOver == true)
@@ -43,8 +43,8 @@ namespace SnakeGame
                 board = new Board();
                 cherry = new Cherry();
                 banana = new Banana();
-                snakeOne = new Snake(ConsoleColor.DarkMagenta, 0);
-                snakeTwo = new Snake(ConsoleColor.Blue, 16);
+                snakeOne = new Snake(ConsoleColor.Blue, 0);
+                snakeTwo = new Snake(ConsoleColor.DarkMagenta, 16);
 
                 Speed = 120m;
                 ScoreOne = 0;
@@ -56,6 +56,7 @@ namespace SnakeGame
                 Console.Clear();
 
                 board.drawBoard(); // Board
+                setDesc(2);
                 cherry.getCherrry(); // Cherry
                 banana.getBanana(); // Banana
 

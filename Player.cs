@@ -16,6 +16,20 @@ namespace SnakeGame
         public Banana banana;
         public Snake snakeOne;
 
+        protected void setDesc(int amountPlayer)
+        {
+            Console.SetCursorPosition(0, (Board.Height + 6));
+            if (amountPlayer == 1)
+            {
+
+                Console.WriteLine($"{ScoreToWin} Points to win!\nPlayer 1 (blue snake): Arrow Keys");
+            }
+            else if (amountPlayer == 2)
+            {
+
+                Console.WriteLine($"{ScoreToWin} Points to win!\nPlayer 1 (blue snake): Arrow Keys\nPlayer 2 (magenta snake): W A S D");
+            }
+        }
         protected void setScore(int amountScore, int posScore, string playerScore = "Score Snake")
         {
             Console.SetCursorPosition(Board.Width / 2 - 4 + posScore, Board.Height + 2);
