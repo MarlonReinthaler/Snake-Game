@@ -18,7 +18,7 @@ namespace SnakeGame
 
             SnakeBody = new List<Position>();
             SnakeBody.Add(new Position(xSnake, ySnake));
-            SnakeBody.Add(new Position(xSnake, ySnake - 1));
+            SnakeBody.Add(new Position(xSnake, ySnake));
         }
 
         public void moveSnakeHead()
@@ -79,7 +79,7 @@ namespace SnakeGame
 
             if (head.x == food.x && head.y == food.y)
             {
-                speedSnake *= 0.9m;
+                speedSnake *= 1.10m;
                 scoreSnake += scoreFood;
                 SnakeBody.Add(new Position(xSnake, ySnake));
                 f.setFood();
@@ -88,26 +88,24 @@ namespace SnakeGame
 
         public void hitEachOther(Snake snakeOne, Snake snakeTwo, ref bool gameOver)
         {
-            // for (int i = 0; i < snakeOne.SnakeBody.Count; i++)
-            // {
-            //     var sb = SnakeBody[^1];
+            for (int i = 0; i < snakeOne.SnakeBody.Count - 1; i++)
+            {
+                var head = snakeTwo.SnakeBody[^1];
 
-            //     if (sb.x == snakeOne.SnakeBody[i].x && sb.y == snakeOne.SnakeBody[i].y || sb.x == snakeOne.SnakeBody[i].x && sb.y == snakeOne.SnakeBody[i].y) //Gameover Tail Snake 1
-            //     {
-            //         gameOver = true;
-            //         // Console.Write("verloren");
-            //     }
-            // }
-            // for (int i = 0; i < snakeTwo.SnakeBody.Count; i++)
-            // {
-            //     var sb = SnakeBody[^1];
+                if (head.x == snakeOne.SnakeBody[i].x && head.y == snakeOne.SnakeBody[i].y || head.x == snakeOne.SnakeBody[i].x && head.y == snakeOne.SnakeBody[i].y)
+                {
+                    gameOver = true;
+                }
+            }
+            for (int i = 0; i < snakeTwo.SnakeBody.Count - 1; i++)
+            {
+                var head = snakeOne.SnakeBody[^1];
 
-            //     if (sb.x == snakeTwo.SnakeBody[i].x && sb.y == snakeTwo.SnakeBody[i].y || sb.x == snakeTwo.SnakeBody[i].x && sb.y == snakeTwo.SnakeBody[i].y) //Gameover Tail Snake 2
-            //     {
-            //         gameOver = true;
-            //         // Console.Write("verloren");
-            //     }
-            // }
+                if (head.x == snakeTwo.SnakeBody[i].x && head.y == snakeTwo.SnakeBody[i].y || head.x == snakeTwo.SnakeBody[i].x && head.y == snakeTwo.SnakeBody[i].y)
+                {
+                    gameOver = true;
+                }
+            }
         }
 
         public void hitItself(ref bool gameOver)
@@ -128,7 +126,7 @@ namespace SnakeGame
 
         public void hitBoard(ref bool gameOver)
         {
-            Position head = SnakeBody[^1];
+            var head = SnakeBody[^1];
 
             if (head.x >= Board.Width || head.x <= 0 || head.y >= Board.Height || head.y <= 0)
             {

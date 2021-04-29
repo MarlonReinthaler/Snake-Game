@@ -8,7 +8,7 @@ namespace SnakeGame
         {
             Color = ConsoleColor.Red;
             Letter = 'C';
-            FoodScore = 20;
+            FoodScore = 9;
             setFood();
             drawFood();
         }

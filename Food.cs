@@ -6,7 +6,6 @@ namespace SnakeGame
     {
         protected ConsoleColor Color { get; set; }
         protected char Letter { get; set; }
-        // public static int FoodScore { get; set; }
 
         public int FoodScore;
         public Position foodPos = new Position(0, 0);

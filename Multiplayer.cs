@@ -12,27 +12,27 @@ namespace SnakeGame
         {
             if (ScoreOne >= ScoreToWin)
             {
-                setWin("SnakeOne hat gewonnen");
+                setWin("SnakeOne has won");
                 gameWin = true;
             }
             else if (ScoreTwo >= ScoreToWin)
             {
-                setWin("SnakeTwo hat gewonnen");
+                setWin("SnakeTwo has won");
                 gameWin = true;
             }
-            else if (gameOver == true && ScoreOne > ScoreTwo)
+            else if (gameOver == true && ScoreOne >= ScoreTwo)
             {
-                setWin("SnakeOne hat gewonnen");
+                setWin("SnakeOne has won");
                 gameWin = true;
             }
-            else if (gameOver == true && ScoreOne < ScoreTwo)
+            else if (gameOver == true && ScoreOne <= ScoreTwo)
             {
-                setWin("SnakeTwo hat gewonnen");
+                setWin("SnakeTwo has won");
                 gameWin = true;
             }
             else if (gameOver == true)
             {
-                setWin("Unentschieden");
+                setWin("Nobody won");
             }
 
         }

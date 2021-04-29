@@ -5,7 +5,7 @@ namespace SnakeGame
 {
     public class Player
     {
-        public decimal Speed = 120m;
+        public decimal Speed = 180m;
         public int ScoreOne = 0;
         public int ScoreToWin = 20;
         public bool gameOver;
@@ -22,7 +22,7 @@ namespace SnakeGame
             Console.Write($"{playerScore}: {amountScore}");
         }
 
-        protected void setWin(string playerMessage, int posWin = 10)
+        protected void setWin(string playerMessage, int posWin = 5)
         {
             Console.SetCursorPosition(Board.Width / 2 - posWin, Board.Height + 5);
             Console.Write($"{playerMessage}");
