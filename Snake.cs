@@ -93,7 +93,7 @@ namespace SnakeGame
 
         public void hitEachOther(Snake snakeOne, Snake snakeTwo, ref bool gameOver)
         {
-            for (int i = 0; i < snakeOne.SnakeBody.Count - 1; i++)
+            for (int i = 0; i < snakeOne.SnakeBody.Count; i++)
             {
                 var head = snakeTwo.SnakeBody[^1];
 
@@ -102,7 +102,7 @@ namespace SnakeGame
                     gameOver = true;
                 }
             }
-            for (int i = 0; i < snakeTwo.SnakeBody.Count - 1; i++)
+            for (int i = 0; i < snakeTwo.SnakeBody.Count; i++)
             {
                 var head = snakeOne.SnakeBody[^1];
 
